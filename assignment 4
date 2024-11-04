@@ -1,0 +1,58 @@
+1. Tính Tổng Các Số Lẻ và Chẵn
+public class TongLeChan {
+    public static void main(String[] args) {
+        int tongLe = 0;
+        int tongChan = 0;
+
+        for (int i = 1; i <= 100; i++) {
+            if (i % 2 == 0) {
+                tongChan += i; 
+            } else {
+                tongLe += i; 
+            }
+        }
+
+        System.out.println("tong cac so chan tu 1 den 100: " + tongChan);
+        System.out.println("tong cac so le tu 1 den 100: " + tongLe);
+    }
+}
+
+2. Tính Tổng Các Chữ Số
+import java.util.Scanner;
+
+public class TongChuSo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("nhap so nguyen: ");
+        int n = scanner.nextInt();
+        int tong = 0;
+
+        while (n != 0) {
+            tong += n % 10; 
+            n /= 10;        
+        }
+
+        System.out.println("tong cac chu so: " + tong);
+    }
+}
+3. Tìm Số Nguyên Tố
+public class SoNguyenTo {
+    public static void main(String[] args) {
+        System.out.println("cac so nguyen to 1 den 100:");
+
+        for (int i = 2; i <= 100; i++) {
+            boolean laSoNguyenTo = true;
+
+            for (int j = 2; j <= Math.sqrt(i); j++) {
+                if (i % j == 0) {
+                    laSoNguyenTo = false;
+                    break;
+                }
+            }
+
+            if (laSoNguyenTo) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
